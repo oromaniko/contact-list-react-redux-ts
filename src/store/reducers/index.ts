@@ -1,7 +1,7 @@
-// import authReducer from './auth'
+import authReducer from './auth'
 
 const reducers = {
-    // auth: authReducer,
+    auth: authReducer,
 }
 
 export default reducers
