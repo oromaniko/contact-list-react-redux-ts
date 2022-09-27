@@ -9,8 +9,7 @@ const AppRouter = () => {
         <Routes>
             {isAuth ? (
                 <>
-                    {privateRoutes.map(({ path, element }) => {
-                        const Element = element
+                    {privateRoutes.map(({ path, element: Element }) => {
                         return (
                             <Route
                                 path={path}
@@ -26,8 +25,7 @@ const AppRouter = () => {
                 </>
             ) : (
                 <>
-                    {publicRoutes.map(({ path, element }) => {
-                        const Element = element
+                    {publicRoutes.map(({ path, element: Element }) => {
                         return (
                             <Route
                                 path={path}
