@@ -1,16 +1,14 @@
-import {Form, Checkbox, Button, Alert, Input } from "antd";
+import {Form, Checkbox, Button, Alert, Input, Card} from "antd";
 import {useTypedSelector} from "../hooks/useTypedSelector";
-import {useDispatch} from "react-redux";
-import {AuthActionCreators} from "../store/action-creators/auth";
+import {rules} from "../utils/rules";
+import {useActions} from "../hooks/useActions";
 
 const LoginForm = () => {
-    const dispatch = useDispatch()
+    const { login } = useActions();
     const { errors, isLoading } = useTypedSelector((state) => state.auth)
 
     const handleLogin = (values: any) => {
-        dispatch<any>(
-            AuthActionCreators.login(values.username, values.password)
-        )
+        login(values.username, values.password)
     }
 
     const messages = {
@@ -22,80 +20,70 @@ const LoginForm = () => {
     }
 
     return (
-        <Form
-            name='basic'
-            labelCol={{
-                span: 8,
-            }}
-            wrapperCol={{
-                span: 30,
-            }}
-            initialValues={{
-                remember: true,
-            }}
-            onFinish={handleLogin}
-            autoComplete='off'
-            validateMessages={messages}
-            className='position-rel'
-        >
-            <Form.Item
-                label='Username'
-                name='username'
-                rules={[
-                    {
-                        required: true,
-                        min: 2,
-                    },
-                    { max: 20 },
-                ]}
-            >
-                <Input placeholder='user' />
-            </Form.Item>
-
-            <Form.Item
-                label='Password'
-                name='password'
-                rules={[
-                    {
-                        required: true,
-                        min: 4,
-                    },
-                    { max: 20 },
-                ]}
-            >
-                <Input.Password placeholder='1234' />
-            </Form.Item>
-
-            <Form.Item
-                name='remember'
-                valuePropName='checked'
-                wrapperCol={{
-                    offset: 8,
-                    span: 16,
+        <Card title='Welcome!' headStyle={{textAlign: 'center'}}>
+            <Form
+                name='basic'
+                labelCol={{
+                    span: 8,
                 }}
-            >
-                <Checkbox>Remember me</Checkbox>
-            </Form.Item>
-
-            <Form.Item
                 wrapperCol={{
-                    offset: 8,
-                    span: 16,
+                    span: 30,
                 }}
+                initialValues={{
+                    remember: true,
+                }}
+                onFinish={handleLogin}
+                autoComplete='off'
+                validateMessages={messages}
+                className='position-rel'
             >
-                <Button type='primary' htmlType='submit' loading={isLoading}>
-                    Submit
-                </Button>
-            </Form.Item>
-            {errors && (
-                <Alert
-                    message={errors}
-                    type='error'
-                    closable
-                    className='position-abs'
-                />
-            )}
-        </Form>
+                <Form.Item
+                    label='Username'
+                    name='username'
+                    rules={[rules.required(2), rules.max(20)]}
+                >
+                    <Input placeholder='user' />
+                </Form.Item>
+
+                <Form.Item
+                    label='Password'
+                    name='password'
+                    rules={[rules.required(4), rules.max(20)]}
+                >
+                    <Input.Password placeholder='1234' />
+                </Form.Item>
+
+                <Form.Item
+                    name='remember'
+                    valuePropName='checked'
+                    wrapperCol={{
+                        offset: 8,
+                        span: 16,
+                    }}
+                >
+                    <Checkbox>Remember me</Checkbox>
+                </Form.Item>
+
+                <Form.Item
+                    wrapperCol={{
+                        offset: 8,
+                        span: 16,
+                    }}
+                >
+                    <Button type='primary' htmlType='submit' loading={isLoading}>
+                        Submit
+                    </Button>
+                </Form.Item>
+                {errors && (
+                    <Alert
+                        message={errors}
+                        type='error'
+                        closable
+                        className='position-abs'
+                    />
+                )}
+            </Form>
+        </Card>
     )
 }
 
