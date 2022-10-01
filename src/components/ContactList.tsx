@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Avatar, Divider, List, Skeleton } from 'antd'
+import {IContact} from "../types/contact";
 
-const ContactList = () => {
+interface ContactListProps {
+    contacts: IContact[];
+}
+
+const ContactList = (contacts: ContactListProps) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState([])
 
@@ -16,7 +21,7 @@ const ContactList = () => {
         )
             .then((res) => res.json())
             .then((body) => {
-                setData([...data, ...body.results])
+                setData([...body.results])
                 setLoading(false)
             })
             .catch(() => {
@@ -29,29 +34,18 @@ const ContactList = () => {
     }, [])
 
     return (
-        <div
-            id='scrollableDiv'
-            style={{
-                height: '100vh',
-                overflow: 'auto',
-                padding: '0 16px',
-                border: '1px solid rgba(140, 140, 140, 0.35)',
-            }}
-        >
+        <div className='h100 scrollable'>
             <List
+                itemLayout='horizontal'
+                split={true}
                 dataSource={data}
                 renderItem={(item) => (
-                    <List.Item key={item.email}>
+                    <List.Item key={item.email} actions={[<a key="list-loadmore-edit">edit</a>, <a key="list-loadmore-more">delete</a>]}>
                         <List.Item.Meta
                             avatar={<Avatar src={item.picture.large} />}
-                            title={
-                                <a href='https://ant.design'>
-                                    {item.name.last}
-                                </a>
-                            }
+                            title={item.name.last}
                             description={item.email}
                         />
-                        <div>Content</div>
                     </List.Item>
                 )}
             />
