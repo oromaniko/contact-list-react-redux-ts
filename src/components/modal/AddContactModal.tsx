@@ -1,8 +1,8 @@
-import React from "react";
-import {Form, Modal} from "antd";
-import {useActions} from "../../hooks/useActions";
-import {IFormValues} from "../../types/contactForm";
-import ContactForm from "./ContactForm";
+import React from 'react'
+import { Form, Modal } from 'antd'
+import { useActions } from '../../hooks/useActions'
+import { IFormValues } from '../../types/contactForm'
+import ContactForm from './ContactForm'
 
 type AddContactModalProps = {
     isModalVisible: boolean
@@ -10,13 +10,17 @@ type AddContactModalProps = {
     username: string
 }
 
-const AddContactModal = ({isModalVisible, setIsModalVisible, username}: AddContactModalProps) => {
-    const [form] = Form.useForm();
+const AddContactModal = ({
+    isModalVisible,
+    setIsModalVisible,
+    username,
+}: AddContactModalProps) => {
+    const [form] = Form.useForm()
     const { addContact } = useActions()
 
     const onOk = () => {
-        form.submit();
-    };
+        form.submit()
+    }
 
     const handleAddContact = (values: IFormValues) => {
         addContact(values, username)
@@ -31,9 +35,9 @@ const AddContactModal = ({isModalVisible, setIsModalVisible, username}: AddConta
             onOk={onOk}
             destroyOnClose={true}
         >
-            <ContactForm onFinish={handleAddContact} form={form}/>
+            <ContactForm onFinish={handleAddContact} form={form} />
         </Modal>
     )
 }
 
-export default AddContactModal;
+export default AddContactModal

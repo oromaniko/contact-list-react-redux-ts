@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from '../pages/Login'
 import Logout from '../pages/Logout'
-import Contacts from "../pages/Contacts";
+import Contacts from '../pages/Contacts'
 
 export interface IRoute {
     path: string

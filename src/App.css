@@ -1,30 +1,29 @@
 @import '~antd/dist/antd.css';
 
 .h100 {
-  height: calc(100vh - 64px);
+    height: calc(100vh - 64px);
 }
 
 .pd16 {
-  padding: 16px;
+    padding: 16px;
 }
 
 .scrollable {
-  overflow: auto;
-  padding: 16px 50px;
-  background-color: white;
+    overflow: auto;
+    padding: 16px 50px;
+    background-color: white;
 }
 
 .position-abs {
-  position: absolute;
-  top: -50px;
-  width: 100%;
+    position: absolute;
+    top: -50px;
+    width: 100%;
 }
 
 .position-rel {
-  position: relative;
-
+    position: relative;
 }
 
 .ant-form-item-explain-error {
-  font-size: 80%;
+    font-size: 80%;
 }

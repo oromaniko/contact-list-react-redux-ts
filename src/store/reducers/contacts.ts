@@ -1,10 +1,14 @@
-import {ContactsAction, ContactsActionTypes, ContactsState} from "../../types/contacts";
-import {IContact} from "../../models/contact";
+import {
+    ContactsAction,
+    ContactsActionTypes,
+    ContactsState,
+} from '../../types/contacts'
+import { IContact } from '../../models/contact'
 
 const initialState: ContactsState = {
     contacts: [] as IContact[],
     isLoading: false,
-    errors: ''
+    errors: '',
 }
 
 export default function contactsReducer(

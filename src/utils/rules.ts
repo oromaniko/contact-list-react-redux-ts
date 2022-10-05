@@ -1,4 +1,3 @@
-
 export const rules = {
     required: (min: number) => ({
         required: true,

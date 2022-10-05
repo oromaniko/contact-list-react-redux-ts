@@ -1,7 +1,7 @@
-import React from "react";
-import {Form, FormInstance, Input, Radio} from "antd";
-import {rules} from "../../utils/rules";
-import {IFormValues} from "../../types/contactForm";
+import React from 'react'
+import { Form, FormInstance, Input, Radio } from 'antd'
+import { rules } from '../../utils/rules'
+import { IFormValues } from '../../types/contactForm'
 
 type ContactFormProps = {
     onFinish: (values: IFormValues) => void
@@ -9,7 +9,7 @@ type ContactFormProps = {
     initialValues?: IFormValues | undefined
 }
 
-const ContactForm = ({onFinish, form, initialValues}: ContactFormProps) => {
+const ContactForm = ({ onFinish, form, initialValues }: ContactFormProps) => {
     const messages = {
         required: 'Please input your ${label}',
         string: {
@@ -59,11 +59,7 @@ const ContactForm = ({onFinish, form, initialValues}: ContactFormProps) => {
                 <Input placeholder='Last name' />
             </Form.Item>
 
-            <Form.Item
-                label='Gender'
-                name='gender'
-                rules={[rules.required(0)]}
-            >
+            <Form.Item label='Gender' name='gender' rules={[rules.required(0)]}>
                 <Radio.Group>
                     <Radio value={'male'}>Male</Radio>
                     <Radio value={'female'}>Female</Radio>
@@ -73,4 +69,4 @@ const ContactForm = ({onFinish, form, initialValues}: ContactFormProps) => {
     )
 }
 
-export default ContactForm;
+export default ContactForm

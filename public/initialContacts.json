@@ -1,83 +1,83 @@
 [
-  {
-    "name": {
-      "first": "Harry",
-      "last": "Miller"
+    {
+        "name": {
+            "first": "Harry",
+            "last": "Miller"
+        },
+        "email": "harry.miller@example.com",
+        "gender": "male",
+        "picture": "https://randomuser.me/api/portraits/men/93.jpg"
     },
-    "email": "harry.miller@example.com",
-    "gender": "male",
-    "picture": "https://randomuser.me/api/portraits/men/93.jpg"
-  },
-  {
-    "name": {
-      "first": "Elena",
-      "last": "Aiden"
+    {
+        "name": {
+            "first": "Elena",
+            "last": "Aiden"
+        },
+        "email": "elena.aiden@example.com",
+        "gender": "female",
+        "picture": "https://randomuser.me/api/portraits/women/8.jpg"
     },
-    "email": "elena.aiden@example.com",
-    "gender": "female",
-    "picture": "https://randomuser.me/api/portraits/women/8.jpg"
-  },
-  {
-    "name": {
-      "first": "Luca",
-      "last": "Alvar"
+    {
+        "name": {
+            "first": "Luca",
+            "last": "Alvar"
+        },
+        "email": "luca.alvar@example.com",
+        "gender": "male",
+        "picture": "https://randomuser.me/api/portraits/men/94.jpg"
     },
-    "email": "luca.alvar@example.com",
-    "gender": "male",
-    "picture": "https://randomuser.me/api/portraits/men/94.jpg"
-  },
-  {
-    "name": {
-      "first": "Joel",
-      "last": "Taylor"
+    {
+        "name": {
+            "first": "Joel",
+            "last": "Taylor"
+        },
+        "email": "bunny@example.com",
+        "gender": "male",
+        "picture": "https://randomuser.me/api/portraits/men/90.jpg"
     },
-    "email": "bunny@example.com",
-    "gender": "male",
-    "picture": "https://randomuser.me/api/portraits/men/90.jpg"
-  },
-  {
-    "name": {
-      "first": "Olivia",
-      "last": "Kumar"
+    {
+        "name": {
+            "first": "Olivia",
+            "last": "Kumar"
+        },
+        "email": "oliva@example.com",
+        "gender": "female",
+        "picture": "https://randomuser.me/api/portraits/women/12.jpg"
     },
-    "email": "oliva@example.com",
-    "gender": "female",
-    "picture": "https://randomuser.me/api/portraits/women/12.jpg"
-  },
-  {
-    "name": {
-      "first": "Nancy",
-      "last": "Smith"
+    {
+        "name": {
+            "first": "Nancy",
+            "last": "Smith"
+        },
+        "email": "nancy.smith@example.com",
+        "gender": "female",
+        "picture": "https://randomuser.me/api/portraits/women/23.jpg"
     },
-    "email": "nancy.smith@example.com",
-    "gender": "female",
-    "picture": "https://randomuser.me/api/portraits/women/23.jpg"
-  },
-  {
-    "name": {
-      "first": "John",
-      "last": "Sullivan"
+    {
+        "name": {
+            "first": "John",
+            "last": "Sullivan"
+        },
+        "email": "sullivan@example.com",
+        "gender": "male",
+        "picture": "https://randomuser.me/api/portraits/men/89.jpg"
     },
-    "email": "sullivan@example.com",
-    "gender": "male",
-    "picture": "https://randomuser.me/api/portraits/men/89.jpg"
-  },
-  {
-    "name": {
-      "first": "Selena",
-      "last": "Gomez"
+    {
+        "name": {
+            "first": "Selena",
+            "last": "Gomez"
+        },
+        "email": "singer@example.com",
+        "gender": "female",
+        "picture": "https://randomuser.me/api/portraits/women/13.jpg"
     },
-    "email": "singer@example.com",
-    "gender": "female",
-    "picture": "https://randomuser.me/api/portraits/women/13.jpg"
-  },
-  {
-    "name": {
-      "first": "Candy",
-      "last": "Croft"
-    },
-    "email": "criminal@example.com",
-    "gender": "female",
-    "picture": "https://randomuser.me/api/portraits/women/43.jpg"
-  }
+    {
+        "name": {
+            "first": "Candy",
+            "last": "Croft"
+        },
+        "email": "criminal@example.com",
+        "gender": "female",
+        "picture": "https://randomuser.me/api/portraits/women/43.jpg"
+    }
 ]

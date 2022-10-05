@@ -1,5 +1,5 @@
 import authReducer from './auth'
-import contactsReducer from "./contacts";
+import contactsReducer from './contacts'
 
 const reducers = {
     auth: authReducer,

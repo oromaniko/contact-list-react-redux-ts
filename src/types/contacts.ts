@@ -1,4 +1,4 @@
-import {IContact} from "../models/contact";
+import { IContact } from '../models/contact'
 
 export interface ContactsState {
     contacts: IContact[]
@@ -31,7 +31,3 @@ export type ContactsAction =
     | SetContactsAction
     | SetIsLoadingAction
     | SetErrorAction
-
-
-
-

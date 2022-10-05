@@ -1,8 +1,8 @@
-import React from "react";
-import {Form, Modal} from "antd";
-import {useActions} from "../../hooks/useActions";
-import {IFormValues} from "../../types/contactForm";
-import ContactForm from "./ContactForm";
+import React from 'react'
+import { Form, Modal } from 'antd'
+import { useActions } from '../../hooks/useActions'
+import { IFormValues } from '../../types/contactForm'
+import ContactForm from './ContactForm'
 
 type EditContactModalProps = {
     isModalVisible: boolean
@@ -11,13 +11,18 @@ type EditContactModalProps = {
     initialValues: IFormValues
 }
 
-const EditContactModal = ({isModalVisible, setIsModalVisible, username, initialValues}: EditContactModalProps) => {
-    const [form] = Form.useForm();
+const EditContactModal = ({
+    isModalVisible,
+    setIsModalVisible,
+    username,
+    initialValues,
+}: EditContactModalProps) => {
+    const [form] = Form.useForm()
     const { editContact } = useActions()
 
     const onOk = () => {
-        form.submit();
-    };
+        form.submit()
+    }
 
     const handleEditContact = (values: IFormValues) => {
         editContact(values, username, initialValues.email)
@@ -32,9 +37,13 @@ const EditContactModal = ({isModalVisible, setIsModalVisible, username, initialV
             onOk={onOk}
             destroyOnClose={true}
         >
-            <ContactForm onFinish={handleEditContact} form={form} initialValues={initialValues}/>
+            <ContactForm
+                onFinish={handleEditContact}
+                form={form}
+                initialValues={initialValues}
+            />
         </Modal>
     )
 }
 
-export default EditContactModal;
+export default EditContactModal

@@ -1,17 +1,19 @@
-import React, {useState} from "react";
-import {Avatar, List} from "antd";
-import EditContactModal from "./modal/EditContactModal";
-import {IContact} from "../models/contact";
-import {useActions} from "../hooks/useActions";
-import {useTypedSelector} from "../hooks/useTypedSelector";
+import React, { useState } from 'react'
+import { Avatar, List } from 'antd'
+import EditContactModal from './modal/EditContactModal'
+import { IContact } from '../models/contact'
+import { useActions } from '../hooks/useActions'
+import { useTypedSelector } from '../hooks/useTypedSelector'
 
 interface ContactProps {
     contactInfo: IContact
 }
 
-const Contact = ({contactInfo: { email, name, picture, gender}}: ContactProps) => {
-    const { username } = useTypedSelector(state => state.auth.user)
-    const [isModalVisible, setIsModalVisible] = useState(false);
+const Contact = ({
+    contactInfo: { email, name, picture, gender },
+}: ContactProps) => {
+    const { username } = useTypedSelector((state) => state.auth.user)
+    const [isModalVisible, setIsModalVisible] = useState(false)
     const { deleteContact } = useActions()
 
     const handleDeleteContact = (email: string) => {
@@ -23,7 +25,7 @@ const Contact = ({contactInfo: { email, name, picture, gender}}: ContactProps) =
             key={email}
             actions={[
                 <a onClick={() => setIsModalVisible(true)}>edit</a>,
-                <a onClick={() => handleDeleteContact(email)}>delete</a>
+                <a onClick={() => handleDeleteContact(email)}>delete</a>,
             ]}
         >
             <List.Item.Meta
@@ -35,10 +37,15 @@ const Contact = ({contactInfo: { email, name, picture, gender}}: ContactProps) =
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
                 username={username}
-                initialValues={{email, gender, first: name.first, last: name.last}}
+                initialValues={{
+                    email,
+                    gender,
+                    first: name.first,
+                    last: name.last,
+                }}
             />
         </List.Item>
     )
 }
 
-export default Contact;
+export default Contact

@@ -1,10 +1,10 @@
-import {Form, Checkbox, Button, Alert, Input, Card} from "antd";
-import {useTypedSelector} from "../hooks/useTypedSelector";
-import {rules} from "../utils/rules";
-import {useActions} from "../hooks/useActions";
+import { Form, Checkbox, Button, Alert, Input, Card } from 'antd'
+import { useTypedSelector } from '../hooks/useTypedSelector'
+import { rules } from '../utils/rules'
+import { useActions } from '../hooks/useActions'
 
 const LoginForm = () => {
-    const { login } = useActions();
+    const { login } = useActions()
     const { errors, isLoading } = useTypedSelector((state) => state.auth)
 
     const handleLogin = (values: any) => {
@@ -20,7 +20,7 @@ const LoginForm = () => {
     }
 
     return (
-        <Card title='Welcome!' headStyle={{textAlign: 'center'}}>
+        <Card title='Welcome!' headStyle={{ textAlign: 'center' }}>
             <Form
                 name='basic'
                 labelCol={{
@@ -70,7 +70,11 @@ const LoginForm = () => {
                         span: 16,
                     }}
                 >
-                    <Button type='primary' htmlType='submit' loading={isLoading}>
+                    <Button
+                        type='primary'
+                        htmlType='submit'
+                        loading={isLoading}
+                    >
                         Submit
                     </Button>
                 </Form.Item>
