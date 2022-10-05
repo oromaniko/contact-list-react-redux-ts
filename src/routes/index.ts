@@ -1,7 +1,7 @@
 import React from 'react'
 import Login from '../pages/Login'
-import ContactList from '../pages/ContactList'
 import Logout from '../pages/Logout'
+import Contacts from "../pages/Contacts";
 
 export interface IRoute {
     path: string
@@ -9,8 +9,8 @@ export interface IRoute {
 }
 
 export enum RouteNames {
-    LOGIN = 'login',
-    LOGOUT = 'logout',
+    LOGIN = '/login',
+    LOGOUT = '/logout',
     CONTACT = '/',
 }
 
@@ -19,6 +19,6 @@ export const publicRoutes: IRoute[] = [
 ]
 
 export const privateRoutes: IRoute[] = [
-    { path: RouteNames.CONTACT, element: ContactList },
+    { path: RouteNames.CONTACT, element: Contacts },
     { path: RouteNames.LOGOUT, element: Logout },
 ]
