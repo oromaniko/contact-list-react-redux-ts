@@ -7,7 +7,7 @@ import {
     SetIsLoadingAction,
     SetUserAction,
 } from '../../types/auth'
-import { IUser } from '../../types/user'
+import { IUser } from '../../models/user'
 import { AppDispatch } from '../index'
 import axios from 'axios'
 import { ActionCreator } from 'redux'

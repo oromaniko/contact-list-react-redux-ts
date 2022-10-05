@@ -1,6 +1,5 @@
-import { AuthActionTypes, AuthState } from '../../types/auth'
-import { IUser } from '../../types/user'
-import { AnyAction } from 'redux'
+import {AuthAction, AuthActionTypes, AuthState} from '../../types/auth'
+import { IUser } from '../../models/user'
 
 const initialState: AuthState = {
     isAuth: false,
@@ -11,11 +10,11 @@ const initialState: AuthState = {
 
 export default function authReducer(
     state = initialState,
-    action: AnyAction
+    action: AuthAction
 ): AuthState {
     switch (action.type) {
         case AuthActionTypes.SET_AUTH:
-            return { ...state, isAuth: action.payload, isLoading: false }
+            return { ...state, isAuth: action.payload }
         case AuthActionTypes.SET_ERROR:
             return { ...state, errors: action.payload }
         case AuthActionTypes.SET_IS_LOADING:
