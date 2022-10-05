@@ -4,6 +4,16 @@
   height: calc(100vh - 64px);
 }
 
+.pd16 {
+  padding: 16px;
+}
+
+.scrollable {
+  overflow: auto;
+  padding: 16px 50px;
+  background-color: white;
+}
+
 .position-abs {
   position: absolute;
   top: -50px;

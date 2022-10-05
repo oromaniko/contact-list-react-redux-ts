@@ -1,9 +1,9 @@
-import { Layout, Menu, Alert } from 'antd'
-import 'antd/dist/antd.css';
-import { UserOutlined, ContactsOutlined } from '@ant-design/icons'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { useTypedSelector } from '../hooks/useTypedSelector'
+import {Alert, Layout, Menu} from 'antd'
+import {ContactsOutlined, UserOutlined} from '@ant-design/icons'
+import {useNavigate} from 'react-router-dom'
+import {useState} from 'react'
+import {useTypedSelector} from '../hooks/useTypedSelector'
+import {RouteNames} from "../routes";
 
 const Navbar = () => {
     const navigate = useNavigate()
@@ -16,7 +16,7 @@ const Navbar = () => {
             label: isAuth ? 'Logout' : 'Login',
             key: 1,
             onClick: () =>
-                navigate(isAuth ? '/logout' : '/login', { replace: true }),
+                navigate(isAuth ? RouteNames.LOGOUT : RouteNames.LOGIN, { replace: true }),
         },
         {
             icon: <ContactsOutlined />,
@@ -24,7 +24,7 @@ const Navbar = () => {
             key: 2,
             onClick: () => {
                 if (isAuth) {
-                    navigate('/', { replace: true })
+                    navigate(RouteNames.CONTACT, { replace: true })
                 } else {
                     setShowLoginAlert(true)
                     setTimeout(() => setShowLoginAlert(false), 2000)
