@@ -7,12 +7,13 @@ import {
     LockOutlined,
     InfoCircleOutlined,
 } from '@ant-design/icons'
+import { AuthValues } from '../types/auth'
 
 const LoginForm = () => {
     const { login } = useActions()
     const { errors, isLoading } = useTypedSelector((state) => state.auth)
 
-    const handleLogin = (values: any) => {
+    const handleLogin = (values: AuthValues) => {
         login(values.username, values.password)
     }
 

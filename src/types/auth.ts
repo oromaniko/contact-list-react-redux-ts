@@ -39,3 +39,8 @@ export type AuthAction =
     | SetErrorAction
     | SetUserAction
     | SetIsLoadingAction
+
+export interface AuthValues {
+    username: string
+    password: string
+}
