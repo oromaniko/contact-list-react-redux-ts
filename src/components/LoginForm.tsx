@@ -1,7 +1,12 @@
-import { Form, Checkbox, Button, Alert, Input, Card } from 'antd'
+import { Form, Button, Alert, Input, Card, Tooltip } from 'antd'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 import { rules } from '../utils/rules'
 import { useActions } from '../hooks/useActions'
+import {
+    UserOutlined,
+    LockOutlined,
+    InfoCircleOutlined,
+} from '@ant-design/icons'
 
 const LoginForm = () => {
     const { login } = useActions()
@@ -14,70 +19,64 @@ const LoginForm = () => {
     const messages = {
         required: 'Please input your ${name}',
         string: {
-            max: '${label} is too long',
-            min: '${label} is too short',
+            max: '${name} is too long',
+            min: '${name} is too short',
         },
     }
 
     return (
-        <Card title='Welcome!' headStyle={{ textAlign: 'center' }}>
+        <Card
+            title='Welcome!'
+            headStyle={{ textAlign: 'center' }}
+            style={{ width: 300 }}
+        >
             <Form
-                name='basic'
-                labelCol={{
-                    span: 8,
-                }}
-                wrapperCol={{
-                    span: 30,
-                }}
+                name='login'
                 initialValues={{
                     remember: true,
                 }}
                 onFinish={handleLogin}
                 autoComplete='off'
                 validateMessages={messages}
-                className='position-rel'
             >
                 <Form.Item
-                    label='Username'
                     name='username'
                     rules={[rules.required(2), rules.max(20)]}
                 >
-                    <Input placeholder='user' />
+                    <Input
+                        prefix={<UserOutlined />}
+                        placeholder='Username'
+                        suffix={
+                            <Tooltip title='user | admin - 1234'>
+                                <InfoCircleOutlined
+                                    style={{ color: 'rgba(0,0,0,.45)' }}
+                                />
+                            </Tooltip>
+                        }
+                    />
                 </Form.Item>
 
                 <Form.Item
-                    label='Password'
                     name='password'
                     rules={[rules.required(4), rules.max(20)]}
                 >
-                    <Input.Password placeholder='1234' />
+                    <Input.Password
+                        prefix={<LockOutlined />}
+                        placeholder='Password'
+                    />
                 </Form.Item>
 
-                <Form.Item
-                    name='remember'
-                    valuePropName='checked'
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item
-                    wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                    }}
-                >
+                <Form.Item>
                     <Button
                         type='primary'
                         htmlType='submit'
                         loading={isLoading}
+                        block
                     >
                         Submit
                     </Button>
                 </Form.Item>
+
                 {errors && (
                     <Alert
                         message={errors}
