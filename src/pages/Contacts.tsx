@@ -1,14 +1,16 @@
-import { Button, Layout, Row } from 'antd'
+import { Button, Input, Layout, Row } from 'antd'
 import ContactList from '../components/ContactList'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useActions } from '../hooks/useActions'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 import AddContactModal from '../components/modal/AddContactModal'
 
 const Contacts = () => {
-    const [isModalVisible, setIsModalVisible] = useState(false)
-    const { fetchContacts } = useActions()
     const { username } = useTypedSelector((state) => state.auth.user)
+
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const [searchValue, setSearchValue] = useState('')
+    const { fetchContacts } = useActions()
 
     useEffect(() => {
         fetchContacts(username)
@@ -26,7 +28,17 @@ const Contacts = () => {
                 setIsModalVisible={setIsModalVisible}
                 username={username}
             />
-            <ContactList />
+            <div className='h100 scrollable'>
+                <Row justify='start'>
+                    <Input.Search
+                        allowClear
+                        enterButton
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)}
+                    />
+                </Row>
+                <ContactList searchValue={searchValue} />
+            </div>
         </Layout>
     )
 }
