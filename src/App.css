@@ -1,7 +1,7 @@
 @import '~antd/dist/antd.css';
 
 .h100 {
-    height: calc(100vh - 64px);
+    height: calc(100vh - 128px);
 }
 
 .pd16 {
@@ -14,16 +14,15 @@
     background-color: white;
 }
 
+@media (max-width: 576px) {
+    .scrollable {
+        padding: 16px 16px;
+    }
+}
+
 .position-abs {
     position: absolute;
     top: -50px;
+    left: 0;
     width: 100%;
-}
-
-.position-rel {
-    position: relative;
-}
-
-.ant-form-item-explain-error {
-    font-size: 80%;
 }

@@ -30,7 +30,6 @@ const ContactList = ({ searchValue }: ContactListProps) => {
 
     return (
         <List
-            itemLayout='horizontal'
             loading={isLoading}
             split={true}
             dataSource={filteredContacts ? filteredContacts : contacts}

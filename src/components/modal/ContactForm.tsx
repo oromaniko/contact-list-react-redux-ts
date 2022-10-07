@@ -23,17 +23,16 @@ const ContactForm = ({ onFinish, form, initialValues }: ContactFormProps) => {
             name='basic'
             form={form}
             labelCol={{
-                span: 8,
+                span: 5,
             }}
             wrapperCol={{
-                span: 30,
+                span: 18,
             }}
             initialValues={initialValues}
             onFinish={onFinish}
             autoComplete='off'
             validateMessages={messages}
             preserve={false}
-            className='position-rel'
         >
             <Form.Item
                 label='First name'
