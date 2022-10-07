@@ -16,6 +16,9 @@ const ContactForm = ({ onFinish, form, initialValues }: ContactFormProps) => {
             max: '${label} is too long',
             min: '${label} is too short',
         },
+        types: {
+            email: '${label} is not valid',
+        },
     }
 
     return (
@@ -53,9 +56,10 @@ const ContactForm = ({ onFinish, form, initialValues }: ContactFormProps) => {
             <Form.Item
                 label='Email'
                 name='email'
-                rules={[rules.required(2), rules.max(30)]}
+                validateFirst={true}
+                rules={[{ type: 'email' }, rules.required(5), rules.max(30)]}
             >
-                <Input placeholder='Last name' />
+                <Input placeholder='Email' />
             </Form.Item>
 
             <Form.Item label='Gender' name='gender' rules={[rules.required(0)]}>
