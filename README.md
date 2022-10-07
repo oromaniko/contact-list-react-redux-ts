@@ -6,7 +6,7 @@
 Реализована функция поиска, валидация. В качестве имитации работы с сервером - localstorage.
 
 ## Ссылка на работающее приложение
-https://codesandbox.io/s/pensive-saha-q8bpsz?file=/src/App.tsx
+https://codesandbox.io/s/pensive-saha-q8bpsz?file=/src/README.md
 
 ## Запуск
 
