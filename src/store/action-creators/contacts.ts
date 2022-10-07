@@ -27,7 +27,6 @@ const fetchContacts: ActionCreator<
                 const response = await axios.get<IContact[]>(
                     './initialContacts.json'
                 )
-                debugger
                 localStorage.setItem(user, JSON.stringify(response.data))
                 dispatch(ContactsActionCreators.setContacts(response.data))
             }

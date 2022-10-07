@@ -22,7 +22,7 @@ const Navbar = () => {
         },
         {
             icon: <ContactsOutlined />,
-            label: 'Contact List',
+            label: 'Contacts List',
             key: 2,
             onClick: () => {
                 if (isAuth) {
