@@ -9,7 +9,7 @@ interface ContactProps {
     contactInfo: IContact
 }
 
-const Contact = ({
+const ContactItem = ({
     contactInfo: { email, name, picture, gender },
 }: ContactProps) => {
     const { username } = useTypedSelector((state) => state.auth.user)
@@ -48,4 +48,4 @@ const Contact = ({
     )
 }
 
-export default Contact
+export default ContactItem
